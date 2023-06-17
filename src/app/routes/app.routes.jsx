@@ -5,6 +5,8 @@ import SignUp from "../../pages/auth/SIgnUp";
 import SignIn from "../../pages/auth/SignIn";
 import PostForm from "../../pages/post-form/PostForm";
 import NotFound from "../../pages/not-found/NotFound";
+import Posts from "../../pages/posts/Posts";
+import PostDetails from "../../pages/posts/PostDetails";
 
 const AppRoutes = () => {
   const routes = useRoutes([
@@ -23,6 +25,14 @@ const AppRoutes = () => {
     {
       path: "/post-form",
       element: <PostForm />,
+    },
+    {
+      path: "/posts",
+      element: <Posts />,
+    },
+    {
+      path: "/posts/:postId",
+      element: <PostDetails />,
     },
     {
       path: "*",

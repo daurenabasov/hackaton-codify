@@ -1,0 +1,31 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.box > h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #581c87;
+}
+
+.posts {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.post {
+  border: 1px solid #581c87;
+  border-radius: 5px;
+  width: 300px;
+  padding: 10px;
+}
+
+.post > div > p {
+  font-weight: 600;
+  width: 100px;
+}
