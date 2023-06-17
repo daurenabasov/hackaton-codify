@@ -4,33 +4,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5px;
-}
-
-.fourths {
-  font-size: 10rem;
-}
-
-.page {
-  font-size: 2rem;
-}
-
-.path {
-  display: flex;
-  gap: 10px;
-  font-size: 1.5rem;
-}
-
-.path > p {
-  color: red;
-}
-
-.warning {
-  font-size: 1.2rem;
+  gap: 20px;
 }
 
 .redirect {
   font-size: 2rem;
+}
+
+img {
+  width: 500px;
+  height: 500px;
 }
 
 .redirect > a {

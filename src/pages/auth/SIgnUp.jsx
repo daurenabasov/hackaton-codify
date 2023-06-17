@@ -2,14 +2,14 @@ import "./SIgnUp.css";
 
 const SignUp = () => {
   return (
-    <div class="login-box">
+    <div className="login-box">
       <h2>Registration</h2>
       <form>
-        <div class="user-box">
+        <div className="user-box">
           <input type="text" name="" required="" />
           <label>Email</label>
         </div>
-        <div class="user-box">
+        <div className="user-box">
           <input type="password" name="" required="" />
           <label>Password</label>
         </div>
