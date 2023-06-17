@@ -6,7 +6,7 @@ import ParticlesComponent from "../../app/particles-layot/ParticlesBackround";
 
 const HomePage = () => (
     <>
-        <div  className=" w-full overflow-hidden">
+        <div className="w-full overflow-hidden">
             <div className={`${styles.paddingX} ${styles.flexCenter}`}>
                 <div className={`${styles.boxWidth}`}>
                     <Navbar />
@@ -14,7 +14,7 @@ const HomePage = () => (
                 </div>
             </div>
 
-            <div  style={{ marginBottom: 400 }} className={`bg-white ${styles.flexStart} `}>
+            <div style={{ marginBottom: 400 }} className={`bg-white ${styles.flexStart} `}>
                 <div className={`${styles.boxWidth}`}>
                     <Hero />
 

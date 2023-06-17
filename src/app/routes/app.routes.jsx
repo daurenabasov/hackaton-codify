@@ -4,6 +4,7 @@ import HomePage from "../../pages/Home/HomePage";
 import SignUp from "../../pages/auth/SIgnUp";
 import SignIn from "../../pages/auth/SignIn";
 import PostForm from "../../pages/post-form/PostForm";
+import Profile from "../../pages/profile/Profile";
 
 const AppRoutes = () => {
   const routes = useRoutes([
@@ -22,6 +23,10 @@ const AppRoutes = () => {
     {
       path: "/post-form",
       element: <PostForm />,
+    },
+    {
+      path: "/profile",
+      element: <Profile />,
     },
   ]);
 
