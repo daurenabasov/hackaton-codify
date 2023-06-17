@@ -2,14 +2,14 @@ import "./SIgnUp.css";
 
 const SignIn = () => {
   return (
-    <div class="login-box">
+    <div className="login-box">
       <h2>Authorization</h2>
       <form>
-        <div class="user-box">
+        <div className="user-box">
           <input type="email" name="" required="" />
           <label>Email</label>
         </div>
-        <div class="user-box">
+        <div className="user-box">
           <input type="password" name="" required="" />
           <label>Password</label>
         </div>
