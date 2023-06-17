@@ -1,8 +1,11 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit"
+import registrationReducer from "./thunks/sign-up/sign-up.slice"
+const rootReducer = combineReducers({
+    signIn: registrationReducer
 
-const rootReducer = combineReducers({})
+})
 
 
- export const setupStore = configureStore({
+export const setupStore = configureStore({
     reducer: rootReducer
 })
