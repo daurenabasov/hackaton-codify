@@ -10,7 +10,7 @@ const SignUp = () => {
   const [password, setPassword] = useState("")
   const [success, setSuccess] = useState(false);
 
-  const { error } = useSelector(state => state.signIn)
+  const { error } = useSelector(state => state.signUp)
 
   console.log(error);
 
