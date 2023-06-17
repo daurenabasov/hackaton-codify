@@ -3,6 +3,7 @@ import { useRoutes } from "react-router-dom";
 import HomePage from "../../pages/Home/HomePage";
 import SignUp from "../../pages/auth/SIgnUp";
 import SignIn from "../../pages/auth/SignIn";
+import PostForm from "../../pages/post-form/PostForm";
 
 const AppRoutes = () => {
   const routes = useRoutes([
@@ -17,6 +18,10 @@ const AppRoutes = () => {
     {
       path: "/sign-in",
       element: <SignIn />,
+    },
+    {
+      path: "/post-form",
+      element: <PostForm />,
     },
   ]);
 

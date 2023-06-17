@@ -1,0 +1,74 @@
+.post-box {
+  margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.post-box > h2 {
+  font-size: 30px;
+  font-weight: 600;
+  color: #581c87;
+}
+
+.post-box > form {
+  font-size: 20px;
+  font-weight: 600;
+  color: #581c87;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 50%;
+}
+
+.post-box > form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.post-box > form > div > input {
+  color: #581c87;
+  border: 1px solid #581c87;
+  border-radius: 4px;
+  padding: 7px;
+  padding-left: 15px;
+}
+
+.post-box > form > div > input:focus {
+  outline: none;
+}
+
+.post-box > form > div > textarea {
+  color: #581c87;
+  border: 1px solid #581c87;
+  border-radius: 4px;
+  padding-left: 15px;
+  height: 150px;
+  resize: none;
+}
+
+.post-box > form > div > textarea:focus {
+  outline: none;
+}
+
+.post-box > form > div > input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #581c87;
+}
+
+.post-box > form > button {
+  background-color: #581c87;
+  height: 50px;
+  color: white;
+  border-radius: 5px;
+}
+
+.post-box > form > button:hover {
+  background-color: white;
+  color: #581c87;
+  border: 1px solid #581c87;
+}
