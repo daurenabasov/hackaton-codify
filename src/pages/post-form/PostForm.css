@@ -50,6 +50,15 @@
   resize: none;
 }
 
+.post-box > form > div > select {
+  color: #581c87;
+  border: 1px solid #581c87;
+  border-radius: 4px;
+  padding: 7px;
+  padding-left: 15px;
+  outline: none;
+}
+
 .post-box > form > div > textarea:focus {
   outline: none;
 }
