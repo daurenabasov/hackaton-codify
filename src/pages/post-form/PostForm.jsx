@@ -3,6 +3,7 @@ import "./PostForm.css";
 import { useDispatch } from "react-redux";
 import { addPost } from "../../app/store/slices/posts-slice/post-slice";
 import { useNavigate } from "react-router-dom";
+import ParticlesComponent from "../../app/particles-layot/ParticlesBackround";
 
 const PostForm = () => {
   const [fileUrl, setFileUrl] = useState("");
@@ -55,114 +56,118 @@ const PostForm = () => {
   };
 
   return (
-    <div className="post-box">
-      <h2>ADD POST</h2>
+    <>
+      <ParticlesComponent />
+      <div className="post-box">
+        <h2>Добавить пост</h2>
 
-      <form onSubmit={onSubmit}>
-        <div>
-          <label>Title</label>
-          <input
-            type="text"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            placeholder="Title"
-          />
-        </div>
+        <form onSubmit={onSubmit}>
+          <div>
+            <label>Название</label>
+            <input
+              type="text"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              placeholder="название"
+            />
+          </div>
 
-        <div>
-          <label>Image url</label>
-          <input
-            type="text"
-            value={fileUrl}
-            onChange={handleFileChange}
-            placeholder="Url"
-          />
-        </div>
+          <div>
+            <label>Ссылка на картинку</label>
+            <input
+              type="text"
+              value={fileUrl}
+              onChange={handleFileChange}
+              placeholder="Ссылка"
+            />
+          </div>
 
-        <div>
-          <label>Short description</label>
-          <textarea
-            value={shortInfo}
-            onChange={(e) => setShortInfo(e.target.value)}
-            placeholder="Short description"
-          />
-        </div>
+          <div>
+            <label>Короткое описание</label>
+            <textarea
+              value={shortInfo}
+              onChange={(e) => setShortInfo(e.target.value)}
+              placeholder="Короткое описание"
+            />
+          </div>
 
-        <div>
-          <label>Full description</label>
-          <textarea
-            value={fullInfo}
-            onChange={(e) => setFullInfo(e.target.value)}
-            placeholder="Full description"
-          />
-        </div>
+          <div>
+            <label>Полное описание</label>
+            <textarea
+              value={fullInfo}
+              onChange={(e) => setFullInfo(e.target.value)}
+              placeholder="Полное описание"
+            />
+          </div>
 
-        <div>
-          <label>Amount</label>
-          <input
-            type="number"
-            min={0}
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            placeholder="Amount"
-          />
-        </div>
+          <div>
+            <label>Количество</label>
+            <input
+              type="number"
+              min={0}
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
+              placeholder="Количество"
+            />
+          </div>
 
-        <div>
-          <label>Amount rest</label>
-          <input
-            type="number"
-            min={0}
-            value={amountRest}
-            onChange={(e) => setAmountRest(e.target.value)}
-            placeholder="Amount rest"
-          />
-        </div>
+          <div>
+            <label>Сумма остатка</label>
+            <input
+              type="number"
+              min={0}
+              value={amountRest}
+              onChange={(e) => setAmountRest(e.target.value)}
+              placeholder="Сумма остатка"
+            />
+          </div>
 
-        <div>
-          <label>Amount per season</label>
-          <input
-            type="number"
-            min={0}
-            value={amountPerSeason}
-            onChange={(e) => setAmountPerSeason(e.target.value)}
-            placeholder="Amount per season"
-          />
-        </div>
+          <div>
+            <label>Сумма за сезон</label>
+            <input
+              type="number"
+              min={0}
+              value={amountPerSeason}
+              onChange={(e) => setAmountPerSeason(e.target.value)}
+              placeholder="Сумма за сезон"
+            />
+          </div>
 
-        <div>
-          <label>Amount of person</label>
-          <input
-            type="number"
-            min={0}
-            value={amountOfPerson}
-            onChange={(e) => setAmountOfPerson(e.target.value)}
-            placeholder="Amount of person"
-          />
-        </div>
+          <div>
+            <label>Сумма человека</label>
+            <input
+              type="number"
+              min={0}
+              value={amountOfPerson}
+              onChange={(e) => setAmountOfPerson(e.target.value)}
+              placeholder="Сумма человека"
+            />
+          </div>
 
-        <div>
-          <label>Category</label>
-          <select value={selectedValue} onChange={handleSelectChange}>
-            <option value="1">Стартап</option>
-            <option value="2">Экология</option>
-            <option value="3">Климат</option>
-          </select>
-        </div>
+          <div>
+            <label>Категории</label>
+            <select value={selectedValue} onChange={handleSelectChange}>
+              <option value="1">Стартап</option>
+              <option value="2">Экология</option>
+              <option value="3">Климат</option>
+            </select>
+          </div>
 
-        <div>
-          <label>Status</label>
-          <input
-            className="checkbox"
-            type="checkbox"
-            checked={isChecked}
-            onChange={handleCheckboxChange}
-          />
-        </div>
+          <div>
+            <label>Статус</label>
+            <input
+              className="checkbox"
+              type="checkbox"
+              checked={isChecked}
+              onChange={handleCheckboxChange}
+            />
+          </div>
 
-        <button type="submit">ADD</button>
-      </form>
-    </div>
+          <button type="submit">Добавить</button>
+        </form>
+      </div>
+    </>
+
   );
 };
 

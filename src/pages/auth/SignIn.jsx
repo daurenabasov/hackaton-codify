@@ -5,6 +5,7 @@ import { signInFetch } from "../../app/store/thunks/sign-in/sign-in.thunk";
 import { useNavigate } from "react-router-dom";
 import { Navbar } from "../../components";
 import styles from "../../style";
+import ParticlesComponent from "../../app/particles-layot/ParticlesBackround";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
@@ -33,7 +34,7 @@ const SignIn = () => {
   };
 
   return (
-    <>
+    <><ParticlesComponent />
       <div className="w-full overflow-hidden">
         <div className={`${styles.paddingX} ${styles.flexCenter}`}>
           <div className={`${styles.boxWidth}`}>
