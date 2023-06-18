@@ -1,11 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { MAIN_URL } from "../../../../constants";
 
 const getPosts = createAsyncThunk("posts/getPosts", async () => {
   try {
-    const response = await axios.get(
-      "https://ridzen23.pythonanywhere.com/post/api/v1/post/"
-    );
+    const response = await axios.get(`${MAIN_URL}/post/api/v1/post/`);
 
     return response.data;
   } catch (error) {
@@ -15,9 +14,7 @@ const getPosts = createAsyncThunk("posts/getPosts", async () => {
 
 const getPostById = createAsyncThunk("posts/getPostById", async (id) => {
   try {
-    const response = await axios.get(
-      `https://ridzen23.pythonanywhere.com/post/api/v1/post/${id}/`
-    );
+    const response = await axios.get(`${MAIN_URL}/post/api/v1/post/${id}/`);
 
     return response.data;
   } catch (error) {
@@ -27,10 +24,7 @@ const getPostById = createAsyncThunk("posts/getPostById", async (id) => {
 
 const addPost = createAsyncThunk("posts/addPost", async (data) => {
   try {
-    const response = await axios.post(
-      "https://ridzen23.pythonanywhere.com/post/api/v1/post/",
-      data
-    );
+    const response = await axios.post(`${MAIN_URL}/post/api/v1/post/`, data);
 
     console.log(response);
   } catch (error) {

@@ -14,18 +14,25 @@
 
 .posts {
   display: flex;
+  justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
+  padding: 20px;
 }
 
 .post {
   border: 1px solid #581c87;
   border-radius: 5px;
-  width: 300px;
   padding: 10px;
+  display: flex;
+  gap: 20px;
 }
 
-.post > div > p {
+.post > div > div > p {
   font-weight: 600;
   width: 100px;
+}
+
+.post > a > img {
+  width: 200px;
 }

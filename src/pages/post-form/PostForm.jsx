@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./PostForm.css";
 import { useDispatch } from "react-redux";
 import { addPost } from "../../app/store/slices/posts-slice/post-slice";
+import { useNavigate } from "react-router-dom";
 
 const PostForm = () => {
   const [fileUrl, setFileUrl] = useState("");
@@ -17,6 +18,8 @@ const PostForm = () => {
 
   const dispatch = useDispatch();
 
+  const navigate = useNavigate();
+
   const handleCheckboxChange = (event) => {
     setIsChecked(event.target.checked);
   };
@@ -26,10 +29,7 @@ const PostForm = () => {
   };
 
   const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    const linkFile = URL.createObjectURL(file).split("").slice(5, 501).join("");
-
-    setFileUrl(linkFile);
+    setFileUrl(e.target.value);
   };
 
   const onSubmit = (e) => {
@@ -49,7 +49,9 @@ const PostForm = () => {
       user_profile_id: 1,
     };
 
-    dispatch(addPost(post));
+    dispatch(addPost(post)).then(() => {
+      navigate("/posts");
+    });
   };
 
   return (
@@ -63,12 +65,18 @@ const PostForm = () => {
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
+            placeholder="Title"
           />
         </div>
 
         <div>
-          <label>Image</label>
-          <input type="file" onChange={handleFileChange} />
+          <label>Image url</label>
+          <input
+            type="text"
+            value={fileUrl}
+            onChange={handleFileChange}
+            placeholder="Url"
+          />
         </div>
 
         <div>
@@ -76,6 +84,7 @@ const PostForm = () => {
           <textarea
             value={shortInfo}
             onChange={(e) => setShortInfo(e.target.value)}
+            placeholder="Short description"
           />
         </div>
 
@@ -84,6 +93,7 @@ const PostForm = () => {
           <textarea
             value={fullInfo}
             onChange={(e) => setFullInfo(e.target.value)}
+            placeholder="Full description"
           />
         </div>
 
@@ -94,6 +104,7 @@ const PostForm = () => {
             min={0}
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
+            placeholder="Amount"
           />
         </div>
 
@@ -104,6 +115,7 @@ const PostForm = () => {
             min={0}
             value={amountRest}
             onChange={(e) => setAmountRest(e.target.value)}
+            placeholder="Amount rest"
           />
         </div>
 
@@ -114,6 +126,7 @@ const PostForm = () => {
             min={0}
             value={amountPerSeason}
             onChange={(e) => setAmountPerSeason(e.target.value)}
+            placeholder="Amount per season"
           />
         </div>
 
@@ -124,6 +137,7 @@ const PostForm = () => {
             min={0}
             value={amountOfPerson}
             onChange={(e) => setAmountOfPerson(e.target.value)}
+            placeholder="Amount of person"
           />
         </div>
 

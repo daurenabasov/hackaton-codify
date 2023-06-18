@@ -1,0 +1,42 @@
+.detail {
+  padding: 50px;
+  color: #581c87;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.detail > div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.detail > img {
+  border-radius: 5px;
+}
+
+.title {
+  font-size: 3rem;
+}
+
+.full_info {
+  font-size: 2.5rem;
+}
+
+.amount {
+  font-size: 2rem;
+}
+
+.amount_of_person {
+  font-size: 1.5rem;
+}
+
+.amount_per_season {
+  font-size: 1.3rem;
+}
+
+.amount_rest {
+  font-size: 1.2rem;
+}

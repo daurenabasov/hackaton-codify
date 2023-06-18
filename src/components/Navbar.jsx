@@ -1,15 +1,21 @@
 import { useState } from "react";
 
 import { close, menu } from "../assets";
+import "./Navbar.css";
 import { navLinks } from "../constants";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
 
+  const isAuth = localStorage.getItem("token");
+  console.log(isAuth);
+
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar">
-      INVEST
+      <p className="logo">INVEST</p>
+
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
         {navLinks.map((nav, index) => (
           <li
@@ -19,7 +25,7 @@ const Navbar = () => {
             } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
             onClick={() => setActive(nav.title)}
           >
-            <a href={`#${nav.id}`}>{nav.title}</a>
+            {<Link to={nav.id}>{nav.title}</Link>}
           </li>
         ))}
       </ul>
@@ -45,7 +51,7 @@ const Navbar = () => {
                 } ${index === navLinks.length - 1 ? "mb-0" : "mb-4"}`}
                 onClick={() => setActive(nav.title)}
               >
-                <a href={`#${nav.id}`}>{nav.title}</a>
+                <Link to={nav.id}>{nav.title}</Link>
               </li>
             ))}
           </ul>
