@@ -13,8 +13,6 @@ const Posts = () => {
     dispatch(getPosts());
   }, []);
 
-  console.log(data);
-
   return (
     <div className="box">
       <h1>Posts</h1>

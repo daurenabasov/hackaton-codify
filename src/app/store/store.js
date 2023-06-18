@@ -1,16 +1,13 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { postsSlice } from "./slices/posts-slice/post-slice";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { combineReducers, configureStore } from "@reduxjs/toolkit"
-import registrationReducer from "./thunks/sign-up/sign-up.slice"
-import authReducer from "./thunks/sign-in/sign-in.slice"
+import { signUpSlice } from "./thunks/sign-up/sign-up.slice";
+import { signInSlice } from "./thunks/sign-in/sign-in.slice";
 
 const rootReducer = combineReducers({
-    signIn: registrationReducer,
-    auth: authReducer
+  signIn: signInSlice.reducer,
+  signUp: signUpSlice.reducer,
   posts: postsSlice.reducer,
-
-})
+});
 
 export const setupStore = configureStore({
   reducer: rootReducer,

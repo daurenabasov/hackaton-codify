@@ -1,0 +1,11 @@
+.logo {
+  font-size: 25px;
+  background: linear-gradient(265.91deg, #581c87 26.36%, #2600ff 97.23%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  letter-spacing: 4px;
+}

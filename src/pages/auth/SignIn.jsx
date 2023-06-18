@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./SIgnUp.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { signInFetch } from "../../app/store/thunks/sign-in/sign-in.thunk";
 import { useNavigate } from "react-router-dom";
 
@@ -16,33 +16,18 @@ const SignIn = () => {
       setState(e.target.value);
     };
   };
-  const error = useSelector((state) => state.auth.error);
-  const message = useSelector((state) => state.auth.message);
 
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
+
     const data = {
       email,
       password,
     };
-    dispatch(signInFetch(data))
-      .then(() => {
-        navigate("/");
-      })
-      .catch((error) => {
-        console.log(error);
-        // Handle error based on status code
-        if (error.response.status === 401) {
-          // Unauthorized error
-          console.log("Unauthorized error: Please check your credentials");
-        } else if (error.response.status === 500) {
-          // Internal server error
-          console.log("Internal server error: Something went wrong");
-        } else {
-          console.log("Unknown error occurred");
-        }
-      });
+
+    dispatch(signInFetch(data)).then(() => {
+      navigate("/");
+    });
   };
 
   return (
@@ -69,7 +54,6 @@ const SignIn = () => {
           />
           <label>Password</label>
         </div>
-        {error ? <p>пошел нахуй</p> : ""}
         <button type="submit">SIGN IN</button>
       </form>
     </div>
