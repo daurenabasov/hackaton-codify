@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getPostById } from "../../app/store/slices/posts-slice/post-slice";
 import "./PostDetails.css";
 
@@ -17,6 +17,8 @@ const PostDetails = () => {
 
   return (
     <div className="detail">
+      <Link to="/">Go home</Link>
+
       <div>
         <div className="title">{post.title}</div>
         <div className="full_info">{post.full_info}</div>
