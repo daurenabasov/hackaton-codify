@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./SIgnUp.css";
 import { useDispatch } from "react-redux";
 import { signInFetch } from "../../app/store/thunks/sign-in/sign-in.thunk";
-import { useNavigate } from "react-router-dom";
 import { Navbar } from "../../components";
 import styles from "../../style";
 import { Link, useNavigate } from "react-router-dom";
