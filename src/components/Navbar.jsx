@@ -5,24 +5,33 @@ import "./Navbar.css";
 import { navLinks } from "../constants";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
+import { useSelector } from "react-redux";
+import { setupStore } from "../app/store/store";
 
 const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
 
   const isAuth = localStorage.getItem("token");
-
   const navigate = useNavigate()
+
+
+  const handleLogout = () => {
+    localStorage.removeItem("token")
+    navigate("/sign-in")
+  }
 
 
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar">
-      <p className="logo">INVEST</p>
+      <p className="logo" style={{ cursor: "pointer" }} onClick={() => navigate("/")} >INVEST</p>
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
         {
           isAuth ? <>
+
             {navLinks.map((nav, index) => (
+
               <li
                 key={nav.id}
                 className={`font-poppins font-normal cursor-pointer text-[16px] ${active === nav.title ? "text-fuchsia-600	" : "text-black"
@@ -32,6 +41,18 @@ const Navbar = () => {
                 {<Link to={nav.id}>{nav.title}</Link>}
               </li>
             ))}
+            <Button onClick={handleLogout} sx={{
+              padding: "10px 30px",
+              background: "#9333EA",
+              marginLeft: "100px",
+              color: "#fff",
+              '&:hover': {
+                background: 'linear-gradient(157.81deg, #def9fa -43.27%, #bef3f5 -21.24%, #9dedf0 12.19%, #7de7eb 29.82%, #5ce1e6 51.94%, #33bbcf 90.29%)',
+                color: '#000',
+              },
+            }} >
+              logout
+            </Button>
           </> : <>
             <Button onClick={() => navigate("/sign-in")} sx={{
               padding: "10px 30px",

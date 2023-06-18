@@ -1,6 +1,7 @@
 .login-box {
   margin: 50px 35%;
-  width: 400px;
+  width: 600px;
+  min-height: 573px;
   padding: 40px;
   background: white !important;
   box-sizing: border-box;
@@ -26,7 +27,7 @@
   padding: 10px 0;
   font-size: 16px;
   color: #581c87 !important;
-  margin-bottom: 30px;
+  margin-bottom: 90px;
   border: none;
   border-bottom: 1px solid #581c87 !important;
   outline: none;
@@ -61,7 +62,7 @@
   text-transform: uppercase;
   overflow: hidden;
   transition: 0.5s;
-  margin-top: 40px;
+  margin-top: 200px;
   letter-spacing: 4px;
 }
 
