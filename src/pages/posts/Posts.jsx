@@ -18,7 +18,6 @@ const Posts = () => {
     <Suspense fallback={<Loading />}>
       <div className="box">
         <h1>Posts</h1>
-
         <div className="posts">
           {data?.map((post) => (
             <PostsItem key={post.id} {...post} />

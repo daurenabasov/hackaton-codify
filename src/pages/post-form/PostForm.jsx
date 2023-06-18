@@ -3,7 +3,6 @@ import "./PostForm.css";
 import { useDispatch } from "react-redux";
 import { addPost } from "../../app/store/slices/posts-slice/post-slice";
 import { useNavigate } from "react-router-dom";
-import ParticlesComponent from "../../app/particles-layot/ParticlesBackround";
 
 const PostForm = () => {
   const [fileUrl, setFileUrl] = useState("");
@@ -57,7 +56,6 @@ const PostForm = () => {
 
   return (
     <>
-      <ParticlesComponent />
       <div className="post-box">
         <h2>Добавить пост</h2>
 
