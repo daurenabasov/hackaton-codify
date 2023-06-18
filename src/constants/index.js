@@ -17,10 +17,6 @@ import {
 
 export const navLinks = [
   {
-    id: "/sign-in",
-    title: "Sign In",
-  },
-  {
     id: "/post-form",
     title: "Add post",
   },

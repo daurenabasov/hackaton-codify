@@ -13,8 +13,7 @@ export const signInFetch = createAsyncThunk("login/signInFetch", async ({ email,
             }
         })
         const { token, userData, message } = res.data
-        console.log(token, userData, message);
-        return { token, userData }
+        return { token, userData, message }
     } catch (error) {
         return console.log(error);
     }
