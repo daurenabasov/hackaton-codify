@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./PostForm.css";
 import { useDispatch } from "react-redux";
 import { addPost } from "../../app/store/slices/posts-slice/post-slice";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const PostForm = () => {
   const [fileUrl, setFileUrl] = useState("");
@@ -56,6 +56,8 @@ const PostForm = () => {
 
   return (
     <div className="post-box">
+      <Link to="/">Go home</Link>
+
       <h2>ADD POST</h2>
 
       <form onSubmit={onSubmit}>

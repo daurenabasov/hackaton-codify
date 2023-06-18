@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./SIgnUp.css";
 import { useDispatch } from "react-redux";
 import { signInFetch } from "../../app/store/thunks/sign-in/sign-in.thunk";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
@@ -32,6 +32,8 @@ const SignIn = () => {
 
   return (
     <div className="login-box">
+      <Link to="/">Go home</Link>
+
       <h2>Authorization</h2>
       <form onSubmit={handleSubmit}>
         <div className="user-box">
